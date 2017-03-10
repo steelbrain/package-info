@@ -1,6 +1,6 @@
 {
   "name": "sb-package-info",
-  "version": "1.2.5",
+  "version": "0.0.0",
   "description": "Get npm package information",
   "main": "lib/index.js",
   "scripts": {
@@ -26,5 +26,9 @@
     "eslint-config-steelbrain": "^2.0.0",
     "flow-bin": "^0.41.0",
     "sb-exec": "^3.0.2"
+  },
+  "dependencies": {
+    "got": "^6.7.1",
+    "registry-url": "^3.1.0"
   }
 }
