@@ -29,7 +29,7 @@ export default async function getPackageInfo(name: string, registryPrefix: ?stri
 
 ## Usage
 
-```
+```js
 import getPackageInfo from 'sb-package-info'
 
 getPackageInfo('asdasd').catch(function(error) {
