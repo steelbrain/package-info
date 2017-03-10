@@ -14,6 +14,7 @@ async function getPackageInfo(name: string, registryPrefix: ?string = null): Pro
 
   const manifest = {
     name: '',
+    license: '',
     version: '',
     description: '',
     scripts: {},
@@ -27,7 +28,10 @@ async function getPackageInfo(name: string, registryPrefix: ?string = null): Pro
     result = (await got(`${registryUrl(registryPrefix)}${encodeURIComponent(name)}`, { json: true })).body
   } catch (error) {
     if (error && error.statusCode === 404) {
-      throw new Error(`Package '${name}' not found`)
+      const newError = new Error(`Package '${name}' not found`)
+      // $FlowIgnore: Custom property
+      newError.code = 'MODULE_NOT_FOUND'
+      throw newError
     }
     throw error
   }
@@ -36,7 +40,10 @@ async function getPackageInfo(name: string, registryPrefix: ?string = null): Pro
     Object.assign(manifest.versions, result.versions)
     Object.assign(manifest['dist-tags'], result['dist-tags'])
   } else {
-    throw new Error(`Package '${name}' has been unpublished`)
+    const error = new Error(`Package '${name}' has been unpublished`)
+    // $FlowIgnore: Custom property
+    error.code = 'MODULE_UNPUBLISHED'
+    throw error
   }
 
   return manifest
