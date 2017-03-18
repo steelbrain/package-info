@@ -1,6 +1,8 @@
 Package-Info
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/package-info.svg)](https://greenkeeper.io/)
+
 Package Info is an npm module to get details about any package published on the npm registry.
 
 ## Installation
