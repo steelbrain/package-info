@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "ava spec/*-spec.js",
-    "lint": "(eslint .) && (flow check)",
+    "lint": "(flow check) && (eslint . ) && (prettier --list-different src/*.js)",
     "prepare": "npm run compile",
     "compile": "sb-babel-cli src -o lib",
     "watch": "npm run compile -- -w"
