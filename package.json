@@ -26,7 +26,7 @@
     "eslint-config-steelbrain": "^3.0.0",
     "flow-bin": "^0.44.0",
     "jasmine-fix": "^1.0.1",
-    "sb-exec": "^3.0.2"
+    "sb-exec": "^4.0.0"
   },
   "dependencies": {
     "got": "^6.7.1",
