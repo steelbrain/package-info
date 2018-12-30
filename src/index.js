@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import got from 'got'
 import registryUrl from 'registry-url'
